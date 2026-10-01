@@ -3,12 +3,6 @@ from random import choice
 weather_combos = ["Rainy", "Sunny", "Cloudy", "Snowy", "Windy", "Stormy", "Foggy", "Hazy", "Drizzling"]
 app = Flask(__name__)
 
-greeter = "Hello, this is a home page and i just used Python's Flask module in this website, this message is also coming from python to HTML, Welcome to my website"
-
-@app.route('/')
-def home():
-    return render_template('index.html', greeting=greeter)
-
 @app.route('/weather')
 def send_weather_info():
     weather_part = choice(weather_combos)
